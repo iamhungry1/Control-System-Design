@@ -1,0 +1,23 @@
+t = 1:0.001:10;  % Define time vector
+a = sin(t);  % Define acceleration as a function of time
+% Numerical integration to find velocity and distance
+v = cumtrapz(t, a);  % Cumulative numerical integration of acceleration
+x = cumtrapz(t, v);  % Cumulative numerical integration of velocity
+% Plot acceleration vs. time
+subplot(3,1,1);
+plot(t, a);
+xlabel('Time');
+ylabel('Acceleration');
+grid on;
+% Plot velocity vs. time
+subplot(3,1,2);
+plot(t, v);
+xlabel('Time');
+ylabel('Velocity');
+grid on;
+% Plot distance vs. time
+subplot(3,1,3);
+plot(t, x);
+xlabel('Time');
+ylabel('Distance');
+grid on;
